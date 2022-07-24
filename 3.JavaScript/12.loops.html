@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>JavaScript Loops - For, For...In, For...Of and forEach()</title>
+
+   <style>
+      h1 {
+         text-align: center;
+         margin: 50px 0;
+      }
+
+      #output {
+         max-width: 600px;
+         margin: 0 auto;
+         padding: 50px;
+         border: 2px solid red;
+         font-size: 1.5em;
+      }
+   </style>
+</head>
+
+<body>
+
+   <h1>JavaScript Loops - For, For...In, For...Of and forEach()</h1>
+
+   <div id="output"></div>
+
+   <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nostrum facere necessitatibus ex. Iste cum obcaecati minima iure natus praesentium quisquam temporibus voluptatum saepe nam, quas blanditiis necessitatibus distinctio! Quidem!</p>
+
+   <p class="text">Eius eum enim minima quos quaerat! Harum laudantium odit dolores eligendi provident quibusdam? Natus perferendis odit tenetur assumenda et quos accusamus distinctio pariatur. Ratione error non tempore eaque, reiciendis a?</p>
+
+   <p class="text">Minus sapiente fugiat repellat laboriosam itaque commodi fuga sit inventore quam cumque, iure perspiciatis aliquid veritatis deserunt doloremque sequi. Optio, eaque tenetur? Possimus doloribus culpa placeat. Nobis facilis aspernatur sapiente.</p>
+
+   <script>
+
+      let output = document.getElementById('output');
+
+      const person = [ 'Shujon Mahmud', 36, 'Bangladesh', 'Bengali', 'Male' ];
+
+      // console.log( person[0] );
+      // console.log( person[1] );
+      // console.log( person[2] );
+      // console.log( person[3] );
+      // console.log( person[4] );
+
+      let info = "<ul>";
+
+      // for( let i = 0; i < person.length; i++ ) {
+
+      //    if( i === 2 ) {
+      //       info += '<li>' + person[i] + '</li>'; 
+      //    }
+
+      //    if( i === 1 ) { break; }
+
+      //    if( i === 3 ) { continue; }
+
+      //    if( person[i] === 'Bangladesh' ) {
+      //       info += '<li>' + person[i] + '</li>';
+      //    }
+
+      //    info += '<li>' + person[i] + '</li>';
+      // }
+
+      // Get key or index number from array
+      // for( let i in person ) {
+      //    info += '<li>' + person[i] + '</li>';
+      //    console.log( i );
+      // }
+
+      // Get value from Item
+      // for( let value of person ) {
+      //    info += '<li>' + value + '</li>';
+      //    console.log( value );
+      // }
+
+      person.forEach( (value, i, array) => {
+         // console.log(value);
+         // console.log(i);
+         // console.log(array);
+         info += '<li>' + value + '</li>';
+      });
+
+      info += '</ul>';
+
+      output.innerHTML = info;
+
+      // console.log( info );
+
+      // Select Elements
+      let pElements = document.querySelectorAll('.text');
+      for (let i = 0; i < pElements.length; i++) {
+         pElements[i].style.color = 'red';
+         pElements[i].style.fontSize = '20px';
+      }
+
+   </script>
+
+</body>
+
+</html>

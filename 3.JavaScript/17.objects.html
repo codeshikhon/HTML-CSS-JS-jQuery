@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>JavaScript Objects</title>
+
+   <style>
+      h1 {
+         text-align: center;
+         margin: 50px 0;
+      }
+
+      #output {
+         max-width: 600px;
+         margin: 0 auto;
+         padding: 50px;
+         border: 2px solid red;
+         font-size: 1.5em;
+      }
+
+      ul li strong {
+         text-transform: capitalize;
+      }
+   </style>
+</head>
+
+<body>
+
+   <h1>JavaScript Objects</h1>
+   <div id="output"></div>
+
+   <script>
+
+      // const person = [ 'Shujon Mahmud', 36, 'Bangladesh', 'Bengali', 'Male' ];
+      // console.log( typeof person );
+      // console.log( person );
+
+      const person = {
+         name: 'Shujon Mahmud',
+         age: 36,
+         country: 'Bangladesh',
+         language: 'Bengali',
+         gender: 'Male',
+         // myIntro: function() {
+         //    return `My name is ${this.name}. I am ${this.age} years old. I am from ${this.country}`;
+         // }
+      };
+
+      let details = "<ul>";
+      for( key in person ) {
+         details += `<li><strong>${key}</strong>: ${person[key]}</li>`;
+      }
+      details += "</ul>";
+
+      document.getElementById( 'output' ).innerHTML = details;
+
+      // console.log( this );
+      // (function() {
+      //    console.log( this );
+      // })();
+
+      // document.getElementById('output').onmouseover = function() {
+      //    console.log( this );
+      // }
+
+      // const person = {};
+      // const person = new Object();
+      // person.name = 'Shujon Mahmud';
+      // person.age = 36;
+      // person.country = 'Bangladesh';
+      // person.language = 'Bengali';
+      // person.gender = 'Male';
+
+   </script>
+</body>
+
+</html>

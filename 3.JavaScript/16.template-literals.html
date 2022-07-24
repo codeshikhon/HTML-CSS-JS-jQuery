@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>JavaScript ES6 Template Literals/Template Strings</title>
+
+   <style>
+      h1 {
+         text-align: center;
+         margin: 50px 0;
+      }
+
+      #output {
+         max-width: 600px;
+         margin: 0 auto;
+         padding: 50px;
+         border: 2px solid red;
+         font-size: 1.5em;
+      }
+   </style>
+</head>
+
+<body>
+
+   <h1>JavaScript ES6 Template Literals/<br>
+      Template Strings/<br>
+      String Templates/<br>
+      Back-Tics Syntax</h1>
+
+   <div id="output"></div>
+   
+
+   <script>
+
+      // let intro = 'It"s" me';
+      let intro = `It's me`;
+
+      let name = 'Shujon Mahmud';
+      let age = 35;
+      let country = 'Bangladesh';
+      // let myintro = 'My name is ' + name + '. I am ' + age + ' years old. I am from ' + country + '.';
+      let myintro = `My name is ${name}. I am ${age} years old. I am from ${country}.`;
+
+      // Percentage Calculator
+      let total = 500000;
+      let per = 5;
+      let profit = `My Profit: ${ (total/100)*per }/=`;
+
+      // HTML Templates
+      let items = `
+         <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+         </ul>`;
+
+      document.getElementById( 'output' ).innerHTML = items;
+
+   </script>
+</body>
+
+</html>

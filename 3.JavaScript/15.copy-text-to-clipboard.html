@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Create Copy Text to Clipboard with JavaScript</title>
+
+   <style>
+      h1 {
+         text-align: center;
+         margin: 50px 0;
+      }
+
+      .container {
+         max-width: 800px;
+         margin: 0 auto;
+      }
+
+      .code-wrapper {
+         padding: 20px 0;
+         border-bottom: 1px solid #ccc;
+         position: relative;
+      }
+
+      .code-wrapper:last-child {
+         border-bottom: none;
+      }
+
+      .code-wrapper textarea {
+         resize: none;
+         min-height: 100px;
+         width: 100%;
+         height: 100%;
+         padding: 20px;
+         padding-right: 70px;
+         border: 1px solid #ccc;
+         outline: none;
+         box-sizing: border-box;
+         display: block;
+         line-height: 20px;
+      }
+
+      .code-wrapper .copy-text {
+         position: absolute;
+         right: 0;
+         bottom: 20px;
+         cursor: pointer;
+         padding: 8px 12px;
+         border: 1px solid #ccc;
+         outline: none;
+      }
+
+      .copied-tooltip {
+         width: 160px;
+         background-color: #000;
+         color: #fff;
+         text-align: center;
+         border-radius: 5px;
+         padding: 10px;
+         position: fixed;
+         z-index: 9999;
+         bottom: -5em;
+         left: 20px;
+         transition: bottom 0.3s;
+      }
+
+      .copied-tooltip.show {
+         bottom: 20px;
+      }
+   </style>
+</head>
+
+<body>
+
+   <h1>Create Copy Text to Clipboard with JavaScript</h1>
+
+   <div class="container">
+
+      <div class="code-wrapper">
+         <h2>JavaScript Data Types</h2>
+
+         <textarea>let name = "Shujon Mahmud"; // String&#010;let age = 35; // number&#010;let height = '6'; // String&#010;let novalue; // undefined&#010;let empty = ""; // String</textarea>
+
+         <button class="copy-text">Copy</button>
+      </div>
+
+      <div class="code-wrapper">
+         <h2>JavaScript Arrays</h2>
+
+         <textarea>const person = [ 'Your Name', 36, 'Bangladesh', 'Bengali', 'Male' ];&#010;const person2 = new Array( 'Your Name', 36, 'Bangladesh', 'Bengali', 'Male' );</textarea>
+
+         <button class="copy-text">Copy</button>
+      </div>
+
+      <div class="code-wrapper">
+         <h2>JavaScript Loops</h2>
+
+         <textarea>const person = [ 'Your Name', 36, 'Bangladesh', 'Bengali', 'Male' ];&#010;for (let i = 0; i < person.length; i++) {&#010;&#160;&#160;console.log(person[i])&#010;}</textarea>
+
+         <button class="copy-text">Copy</button>
+      </div>
+
+   </div>
+
+   <span class="copied-tooltip">Copied to Clipboard</span>
+
+   <script>
+
+      let elements = document.querySelectorAll('.code-wrapper textarea');
+      for (let i = 0; i < elements.length; i++) {
+         const element = elements[i];
+
+         // Set Height to element
+         element.style.height = element.scrollHeight + 2 + 'px';
+
+         // Select Text of the elements
+         element.onclick = () => {
+            element.select();
+         }
+
+         element.nextElementSibling.onclick = () => {
+            // Select Text of the current element
+            element.select();
+
+            // Copy text to clipboarde
+            navigator.clipboard.writeText(element.value);
+
+            // Show/Hide Copied to Clipboard message
+            let copied = document.querySelector('.copied-tooltip');
+            copied.classList.add('show');
+            setTimeout(() => {
+               copied.classList.remove('show');
+            }, 1500)
+         }
+      }
+
+   </script>
+</body>
+
+</html>

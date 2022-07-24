@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>JavaScript Functions and ES6 Arrow Function</title>
+
+   <style>
+      body {
+         padding: 50px;
+      }
+
+      h1 {
+         text-align: center;
+         margin-top: 50px;
+      }
+
+      #output {
+         text-align: center;
+         border: 2px solid green;
+         padding: 30px;
+         max-width: 400px;
+         margin: 0 auto;
+         font-size: 2em;
+      }
+
+      #output>span {
+         font-family: 'Courier New', Courier, monospace;
+      }
+   </style>
+</head>
+
+<body>
+
+   <h1>JavaScript Functions and ES6 Arrow Function</h1>
+
+   <div id="output"></div>
+
+
+   <script>
+
+      let output = document.getElementById('output');
+
+      // myFunction(50, 60, 70);
+
+      // Function Declaration
+      function myFunction(a = null, b = null, c = null) {
+         let result;
+
+         if (a) {
+            result = a;
+            output.innerHTML += `<span>${a}</span>`;
+         }
+
+         if (b) {
+            result += b;
+            output.innerHTML += `<span> + ${b}</span>`;
+         }
+
+         if (c) {
+            result *= c;
+            output.innerHTML += `<span> * ${c}</span>`;
+         }
+
+         if (typeof result !== 'undefined') {
+            output.innerHTML += `<div class="total">Total: ${result}</div>`;
+         }
+
+      }
+
+      
+      // Function Expression
+      const calculate = (a = null, b = null, c = null) => {
+         let result;
+
+         if (a) {
+            result = a;
+            output.innerHTML += `<span>${a}</span>`;
+         }
+
+         if (b) {
+            result += b;
+            output.innerHTML += `<span> + ${b}</span>`;
+         }
+
+         if (c) {
+            result *= c;
+            output.innerHTML += `<span> * ${c}</span>`;
+         }
+
+         if (typeof result !== 'undefined') {
+            output.innerHTML += `<div class="total">Total: ${result}</div>`;
+         }
+      };
+
+      // calculate(10, 15, 20);
+      const Person = {
+         firstName : "Shujon",
+         lastName : "Mahmud",
+         age       : 36,
+         
+         fullname() {
+            return `${this.firstName} ${this.lastName}`;
+         }
+      }
+
+      console.log( Person.fullname() );
+
+   </script>
+</body>
+
+</html>

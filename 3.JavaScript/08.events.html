@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>JavaScript HTML DOM Events</title>
+
+   <style>
+      body {
+         padding: 50px;
+      }
+
+      h1 {
+         text-align: center;
+         margin-top: 50px;
+      }
+
+      #subscribe-button {
+         background-color: #c00;
+         color: #fff;
+         text-transform: uppercase;
+         font-weight: 700;
+         display: inline-block;
+         text-align: center;
+         width: 140px;
+         line-height: 40px;
+         border: none;
+         outline: none;
+         cursor: pointer;
+         border-radius: 2px;
+         letter-spacing: 0.05em;
+      }
+
+      #subscribe-button.subscribed {
+         background-color: #ececec;
+         color: #666;
+      }
+
+      .loading {
+         position: fixed;
+         left: 0;
+         right: 0;
+         top: 0;
+         bottom: 0;
+         background-color: #ddd;
+         color: #666;
+         z-index: 999999;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+
+      @keyframes spinLoader {
+         from {transform: rotate(0deg);}
+         to {transform: rotate(360deg);}
+      }
+
+      .loading svg {
+         width: 50px;
+         animation: spinLoader 1s linear infinite;
+      }
+   </style>
+</head>
+
+<body onload="pageLoader()">
+
+   <div class="loading"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M304 48C304 74.51 282.5 96 256 96C229.5 96 208 74.51 208 48C208 21.49 229.5 0 256 0C282.5 0 304 21.49 304 48zM304 464C304 490.5 282.5 512 256 512C229.5 512 208 490.5 208 464C208 437.5 229.5 416 256 416C282.5 416 304 437.5 304 464zM0 256C0 229.5 21.49 208 48 208C74.51 208 96 229.5 96 256C96 282.5 74.51 304 48 304C21.49 304 0 282.5 0 256zM512 256C512 282.5 490.5 304 464 304C437.5 304 416 282.5 416 256C416 229.5 437.5 208 464 208C490.5 208 512 229.5 512 256zM74.98 437C56.23 418.3 56.23 387.9 74.98 369.1C93.73 350.4 124.1 350.4 142.9 369.1C161.6 387.9 161.6 418.3 142.9 437C124.1 455.8 93.73 455.8 74.98 437V437zM142.9 142.9C124.1 161.6 93.73 161.6 74.98 142.9C56.24 124.1 56.24 93.73 74.98 74.98C93.73 56.23 124.1 56.23 142.9 74.98C161.6 93.73 161.6 124.1 142.9 142.9zM369.1 369.1C387.9 350.4 418.3 350.4 437 369.1C455.8 387.9 455.8 418.3 437 437C418.3 455.8 387.9 455.8 369.1 437C350.4 418.3 350.4 387.9 369.1 369.1V369.1z"/></svg></div>
+
+   <h1>JavaScript HTML DOM Events - Event Handler</h1>
+
+   <div style="margin-bottom: 30px;">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/EF4l6LFI-o4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </div>
+
+   <button onclick="alert('You Clicked!')">Click</button>
+   <button ondblclick="alert('You Clicked 2 times!')">Double Click</button>
+   <button onmouseover="alert('You hovered your mouse')">Mouse Over</button>
+   <button onmouseout="alert('You moved your mouse from it')">Mouse Out</button>
+
+   <h2>Select a Country</h2>
+   <select id="countryselect" onchange="getCountryName()">
+      <option value="Bangladesh">Bangladesh</option>
+      <option value="India">India</option>
+      <option value="Saudi">Saudi</option>
+      <option value="Nepal">Nepal</option>
+      <option value="Srilanka">Srilanka</option>
+   </select>
+   <div style="margin-top: 20px;" class="show-country"></div>
+
+   <h2>When you Presses a Key</h2>
+   <input type="text" onkeypress="alert('You see this after pressing a Key')">
+
+   <h2>When you Releases a Key</h2>
+   <input id="gettext" type="text" onkeyup="getText()">
+   <div style="margin-top: 20px;" class="show-text"></div>
+
+   <h2>HTML DOM Events</h2>
+   <button id="button">This is Button</button>
+
+   <h2>Subscribe Button</h2>
+   <button id="subscribe-button">Subscribe</button>
+
+   <script>
+
+      function getCountryName() {
+         let countryName = document.getElementById( 'countryselect' ).value;
+         let showCountry = document.querySelector( '.show-country' );
+
+         showCountry.innerText = countryName;
+      }
+
+      function getText() {
+         let input = document.getElementById( 'gettext' ).value;
+         let showText = document.querySelector( '.show-text' );
+
+         showText.innerText = input;
+      }
+
+      document.getElementById('button').onmouseout = () => {
+         alert("fldjfkhdfkj");
+      }
+
+      document.getElementById('subscribe-button').onclick = function() {
+         if( this.classList.contains('subscribed') ) {
+            this.classList.remove('subscribed');
+            this.innerText = 'Subscribe';
+         } else {
+            this.classList.add('subscribed');
+            this.innerText = 'Subscribed';
+         }
+      }
+
+      function pageLoader() {
+         document.querySelector('.loading').remove();
+      }
+      
+   </script>
+</body>
+
+</html>

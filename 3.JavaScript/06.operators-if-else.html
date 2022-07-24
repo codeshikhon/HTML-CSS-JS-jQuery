@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>JavaScript Operators - Arithmetic, Assignment, Comparison and Logical Operators + if, else, else if and ES6 Ternary Operator</title>
+
+   <style>
+      body {
+         padding: 50px;
+      }
+
+      h1 {
+         text-align: center;
+         margin-top: 50px;
+      }
+
+      div {
+         text-align: center;
+      }
+   </style>
+</head>
+
+<body>
+
+   <h1>Assignment Operators <code>(=, +=, -=, *=, /=, %=)</code></h1>
+   <div id="assignment"></div>
+   <hr>
+
+   <h1>Arithmetic Operators <code>(+, -, *, **, /, %, ++, --)</code></h1>
+   <div id="arithmetic"></div>
+   <hr>
+
+   <h1>
+      if, else, else if and ES6 Ternary Operator<br>
+      +<br>
+      Comparison Operators <code>(==, ===, !=, !==, <, <=, >, >=)</code>,<br>
+      Logical Operators <code>(&&, ||, !)</code>
+   </h1>
+   <div id="comparison"></div>
+
+   <script>
+
+      let assignment = document.getElementById( 'assignment' );
+      let arithmetic = document.getElementById( 'arithmetic' );
+      let comparison = document.getElementById( 'comparison' );
+
+      let myIntro = "My name is Shujon Mahmud";
+          myIntro += " I am 36 years old."; // myIntro = myIntro + " I am 36 years old."
+
+      assignment.innerHTML = myIntro;
+
+      let a = 5;
+      let b = 6;
+          a += b; // a = a * b
+
+      // arithmetic.innerHTML = a;
+
+      let c = 10;
+      c++;
+      c++;
+      c++;
+
+      c--;
+      c--;
+      c--;
+
+      arithmetic.innerHTML = c;
+
+      let x = 20 * "fdfd"; // NaN
+
+      // if( x ) {
+      //    comparison.innerHTML = "This is ok";
+      // }
+
+      let karim = 51;
+      let rahim = 15;
+      let shamim = 30;
+      let rajib = 50;
+
+      // if( karim < rahim ) {
+      //    comparison.innerHTML = "করিম রহিমের থেকে ছোট।";
+      // } else if( karim < shamim ) {
+      //    comparison.innerHTML = "করিম শামিমের থেকে ছোট।";
+      // } else if( karim < rajib ) {
+      //    comparison.innerHTML = "করিম রাজিবের থেকে ছোট।";
+      // } else {
+      //    comparison.innerHTML = "করিম এখন বুইড়া।";
+      // }
+      
+      let karimNow = ( karim < rahim ) ? "করিম রহিমের থেকে ছোট।"
+      : ( karim < shamim ) ? "করিম শামিমের থেকে ছোট।"
+      : ( karim < rajib ) ? "করিম রাজিবের থেকে ছোট।"
+      : "করিম এখন বুইড়া।";
+
+      comparison.innerHTML = karimNow;
+
+   </script>
+</body>
+
+</html>

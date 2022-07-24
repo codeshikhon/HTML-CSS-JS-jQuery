@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>JavaScript Event Listeners and Create a Modal Box</title>
+
+   <style>
+      body {
+         padding: 50px;
+      }
+
+      h1 {
+         text-align: center;
+         margin-top: 50px;
+      }
+
+      button {
+         display: table;
+         margin: 20px auto;
+      }
+
+      .container,
+      .inner {
+         padding: 50px;
+      }
+
+      .container {
+         background-color: lightpink;
+      }
+
+      .inner {
+         background-color: lightblue;
+         text-align: center;
+      }
+
+      .show-hide {
+         display: table;
+         margin: 30px auto;
+         background-color: red;
+         color: #fff;
+         padding: 12px 24px;
+         border: none;
+         outline: none;
+         cursor: pointer;
+      }
+
+      .modal {
+         position: fixed;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(0, 0, 0, 0.6);
+         z-index: 999999;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         opacity: 0;
+         visibility: hidden;
+         transform: scale(1.1);
+         transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+      }
+
+      .modal.showing {
+         visibility: visible;
+         opacity: 1;
+         transform: scale(1);
+         transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+      }
+
+      .modal .content {
+         background-color: #fff;
+         padding: 30px;
+         max-width: 50vw;
+         position: relative;
+      }
+
+      .modal .close {
+         font-family: cursive;
+         font-weight: 700;
+         position: absolute;
+         right: 20px;
+         top: 20px;
+         background-color: #ddd;
+         width: 30px;
+         line-height: 30px;
+         text-align: center;
+         cursor: pointer;
+      }
+   </style>
+</head>
+
+<body>
+
+   <h1>JavaScript Event Listeners & Create a Modal Box</h1>
+   <button id="button">This is a Button</button>
+   
+   <h2>Use Capture Bubbling/Capturing</h2>
+   <div class="container">
+      <div class="inner">
+         <button class="button">This is a Button</button>
+      </div>
+   </div>
+
+   <h2>Modal Box</h2>
+   <button class="show-hide">Show/Hide</button>
+   <div class="modal">
+      <div class="content">
+         <span class="close">X</span>
+         <h2>Popup Heading</h2>
+         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos accusantium veniam amet nobis pariatur
+            delectus inventore ab quis tempore alias magni nisi, possimus animi a saepe repudiandae neque hic voluptas!
+         </p>
+      </div>
+   </div>
+
+   <script>
+
+      // Method #1
+      let button = document.querySelector('.show-hide'),
+         close = document.querySelector('.modal .close'),
+         modal = document.querySelector('.modal');
+
+      function toggleModal() {
+         modal.classList.toggle('showing');
+      }
+
+      function windowOnClick(e) {
+         if (modal === e.target) {
+            toggleModal();
+         }
+      }
+      
+      button.addEventListener('click', toggleModal);
+      close.addEventListener('click', toggleModal);
+      window.addEventListener('click', windowOnClick);
+
+      // Method #2
+      // window.addEventListener( 'click', modalBoxHandler);
+
+      // function modalBoxHandler( e ) {
+      //    let button = document.querySelector( '.show-hide' ),
+      //        close = document.querySelector( '.modal .close' ),
+      //        modal = document.querySelector( '.modal' );
+         
+      //    if( button === e.target ) {
+      //       modal.classList.add('showing');
+      //    } else if( close === e.target || modal === e.target ) {
+      //       modal.classList.remove('showing');
+      //    }
+      // }
+
+      // document.querySelector('.container').addEventListener( 'click', function() {
+      //    console.log( this );
+      // }, true)
+
+      // document.querySelector('.inner').addEventListener( 'click', function() {
+      //    console.log( this );
+      // }, true)
+
+      // document.querySelector('.button').addEventListener( 'click', function() {
+      //    console.log( this );
+      // }, true)
+
+      // document.getElementById( 'button' ).addEventListener( 'click', myFunction );
+      // document.getElementById( 'button' ).removeEventListener( 'click', myFunction );
+
+      // document.getElementById( 'button' ).onclick = myFunction;
+      // document.getElementById( 'button' ).onclick = myFunction2;
+
+      // function myFunction() {
+      //    console.log("click 1")
+      // }
+
+      // function myFunction2() {
+      //    console.log("click 2")
+      // }
+
+   </script>
+</body>
+
+</html>

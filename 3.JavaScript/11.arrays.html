@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>JavaScript Arrays</title>
+
+   <style>
+      h1 {
+         text-align: center;
+         margin: 50px 0;
+      }
+
+      #output {
+         max-width: 600px;
+         margin: 0 auto;
+         text-align: center;
+         padding: 50px;
+         border: 2px solid red;
+         font-size: 1.5em;
+      }
+   </style>
+</head>
+
+<body>
+
+   <h1>JavaScript Arrays</h1>
+
+   <div id="output"></div>
+
+   <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nostrum facere necessitatibus ex. Iste cum obcaecati minima iure natus praesentium quisquam temporibus voluptatum saepe nam, quas blanditiis necessitatibus distinctio! Quidem!</p>
+
+   <p class="text">Eius eum enim minima quos quaerat! Harum laudantium odit dolores eligendi provident quibusdam? Natus perferendis odit tenetur assumenda et quos accusamus distinctio pariatur. Ratione error non tempore eaque, reiciendis a?</p>
+
+   <p class="text">Minus sapiente fugiat repellat laboriosam itaque commodi fuga sit inventore quam cumque, iure perspiciatis aliquid veritatis deserunt doloremque sequi. Optio, eaque tenetur? Possimus doloribus culpa placeat. Nobis facilis aspernatur sapiente.</p>
+   
+
+   <script>
+
+      // Select Elements
+      let pElements = document.querySelectorAll('.text');
+
+      pElements[2].style.color = 'red';
+      console.log( pElements );
+
+      // Create Arrays
+      const person = [ "Shujon Mahmud", 36, "Bangladesh", "5.7 inch" ];
+      // const person = new Array( "Shujon Mahmud", 36, "Bangladesh", "5.7 inch" );
+
+      // console.log( person );
+
+      let output = document.getElementById( 'output' );
+
+      // Get Single Item
+      // output.innerText = person[1];
+
+      // Replace commas
+      // output.innerText = person.join( ' / ' );
+      // output.innerText = person.toString().replaceAll( ',', ' / ' );
+
+      // Last Item
+      output.innerText = person[ person.length - 1];
+      
+
+      // console.log( person.length );
+
+      // console.log( typeof person );
+      // console.log( person instanceof Array );
+      // console.log( Array.isArray( person ) );
+
+      // Create Blank Array add Items
+      const cars = [];
+      cars[0] = 'BMW';
+      cars[1] = 'Ferari';
+      cars[2] = 'Toyota';
+      cars.push( 'Corolla' );
+      cars.unshift( 'Ford' );
+
+      // Remove Items from array
+      // cars.pop();
+      // cars.shift();
+
+      const colors = [ "Red", "Green", "Blue", "Orange" ];
+
+      // Merge Muliple Arrays
+      const myArray = person.concat( cars, colors );
+
+      // Remove one item and create new Array
+      const sliced = colors.slice(1);
+
+      // console.log( colors );
+      // console.log( sliced );
+      // console.log( myArray.sort() );
+      // console.log( myArray.reverse() );
+
+   </script>
+
+</body>
+
+</html>

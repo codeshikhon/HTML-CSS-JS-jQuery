@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Increase or Decrease Font Size using JavaScript</title>
+
+   <style>
+      h1 {
+         text-align: center;
+         margin: 50px 0;
+      }
+
+      #output {
+         max-width: 600px;
+         margin: 0 auto;
+         padding: 50px;
+         border: 2px solid red;
+         font-size: 1.5em;
+      }
+
+      .container {
+         max-width: 800px;
+         margin: 0 auto;
+      }
+
+      .buttons button {
+         border: none;
+         outline: none;
+         cursor: pointer;
+         font-size: 18px;
+         font-weight: bold;
+         padding: 8px 12px;
+         margin-right: 5px;
+         color: #fff;
+         background-color: #37f;
+         font-family: 'Courier New', Courier, monospace;
+      }
+   </style>
+</head>
+
+<body>
+
+   <h1>Increase or Decrease Font Size using JavaScript</h1>
+
+   <div class="container">
+      <div class="buttons">
+         <button class="increase">A+</button>
+         <button class="decrease">A-</button>
+      </div>
+
+      <div class="post">
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum perspiciatis quis explicabo dicta quaerat
+            neque modi veritatis deleniti rem, a quidem sequi beatae illo quod pariatur eveniet. Molestiae, non
+            reiciendis. Maxime ullam voluptates voluptatibus nisi autem ducimus? Commodi quasi alias expedita aliquam
+            libero blanditiis accusantium provident aliquid praesentium, labore id odio amet voluptate, placeat animi
+            architecto neque, eum dolores. Corrupti ex incidunt explicabo commodi officiis consequatur, consectetur ut
+            alias maiores quas autem aperiam ab molestiae blanditiis ipsa ipsam, nostrum necessitatibus laboriosam
+            ducimus sit. Quidem repudiandae tempore, assumenda, voluptas qui minus, eos culpa omnis in et iure commodi
+            voluptatem laudantium dolore!</p>
+
+         <p>Quia obcaecati ut sequi nostrum ipsum, modi sit nisi exercitationem pariatur dignissimos dicta adipisci
+            veritatis consequuntur nesciunt sapiente ratione corrupti? Quis, quibusdam delectus? Vitae, odit.
+            Praesentium, porro cum atque magnam incidunt saepe asperiores tenetur? Odio ducimus obcaecati voluptate eius
+            saepe ullam eos magnam quos, rerum optio nisi laudantium, tempore amet molestiae nemo! Maxime repudiandae
+            repellendus aliquam ad quis, aperiam perferendis repellat. Nihil pariatur dolore error ad fuga ab a eos quae
+            odit placeat est ea labore incidunt saepe sequi dignissimos enim, minus iste ducimus ut repellat deleniti
+            nam nemo. Quas nemo fugit consectetur. Ad, totam praesentium vel quod modi exercitationem.</p>
+
+         <p>Ipsum accusantium eum fugit officiis perspiciatis illum suscipit deserunt cupiditate tempore, itaque fugiat
+            a veniam cumque reprehenderit repellat nisi molestiae animi distinctio voluptatem non exercitationem commodi
+            neque tenetur qui. Adipisci veritatis debitis ab id repellendus expedita, quas doloremque, temporibus sit
+            vero molestiae facere aliquid exercitationem odio? Sit eaque ipsa aliquam obcaecati unde similique,
+            praesentium aperiam expedita placeat, molestiae porro voluptate magnam aspernatur esse nulla. Laborum
+            temporibus quod quia natus tenetur assumenda cupiditate cumque repellendus reiciendis. Recusandae sequi ea
+            quod, perspiciatis et itaque excepturi deleniti at aliquam delectus reiciendis vel, est non eligendi
+            quibusdam veniam, qui adipisci. Asperiores cum perferendis voluptatibus.</p>
+      </div>
+   </div>
+
+   <script>
+
+      let buttons = document.querySelector( '.buttons' );
+      buttons.addEventListener( 'click', e => {
+         let firstElement = document.querySelector( '.post p' );
+         let properties = window.getComputedStyle( firstElement );
+         let value = properties.getPropertyValue( 'font-size' );
+         let currentSize = parseInt( value );
+
+         let increaseBtn = document.querySelector('.increase');
+         let decreaseBtn = document.querySelector('.decrease');
+
+         // Increase or Decrease Font Size
+         if( increaseBtn === e.target ) {
+            currentSize++;
+         }
+         if( decreaseBtn === e.target ) {
+            currentSize--;
+         }
+         
+         // Set Increased/Decreased Font Size to All Elements
+         let elements = document.querySelectorAll( '.post p' );
+         for (let i = 0; i < elements.length; i++) {
+            const element = elements[i];
+            element.style.fontSize = currentSize + 'px';
+         }
+      })
+
+   </script>
+
+</body>
+
+</html>

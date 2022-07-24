@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>JavaScript DOM Selectors - How to Select HTML Elements</title>
+
+   <style>
+      h1 {
+         text-align: center;
+         margin-top: 100px;
+      }
+   </style>
+</head>
+
+<body>
+
+   <h1 id="page-heading" class="color-red">JavaScript DOM Selectors - How to Select HTML Elements in JavaScript</h1>
+
+   <p class="text-large">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic illum recusandae sit quis laudantium modi libero autem deserunt est atque!</p>
+
+   <p class="text-large">Sed alias repudiandae, necessitatibus itaque voluptatem quaerat repellendus aut unde odit mollitia debitis ipsa dolore modi ipsum eum ipsam tempora!</p>
+
+   <p class="text-large">Eligendi veritatis distinctio, cum excepturi soluta cumque aperiam debitis esse quia facilis quas. Sunt sapiente sint asperiores minus cum ratione.</p>
+
+   <p class="text-large">Neque magni sed repellendus nihil, suscipit, quas earum similique laudantium voluptates pariatur laborum, atque modi autem asperiores ducimus aspernatur dignissimos?</p>
+
+   <p class="text-large">Labore voluptatibus maxime, corrupti exercitationem officia, eaque vitae consequuntur quibusdam explicabo quaerat nihil reprehenderit excepturi ducimus ab error esse aliquam.</p>
+
+   <script>
+
+      // console.dir( document.location );
+      // console.log( document.head );
+      // console.log( document.body );
+
+      // document.title = "Changed title text";
+
+      // console.log( document.scripts );
+
+      // window.alert("fkjdkfhdjkh")
+
+      // console.log( location.href );
+      // console.log( window );
+
+      // by Tag Name
+      let byTagName = document.getElementsByTagName('h1');
+      // byTagName[0].className = 'newclass';
+      // byTagName[0].innerHTML = '<span style="color: red">New HTML Text</span>';
+      // byTagName[0].innerText = '<span style="color: red">New HTML Text</span>';
+
+      // by Id
+      let byId = document.getElementById('page-heading');
+      byId.style.border = '1px solid red';
+      byId.style.backgroundColor = 'lightgreen';
+      byId.style.borderTopWidth = '5px';
+      byId.style.padding = '30px';
+
+      // by class name
+      // let byClass = document.getElementsByClassName( 'text-large' );
+      // let bySel = document.querySelector( 'p.text-large' );
+      let bySel = document.querySelectorAll( 'p.text-large' );
+
+      for (let i = 0; i < bySel.length; i++) {
+         const element = bySel[i];
+         element.style.fontSize = 16 + i + 'px';
+      }
+
+      console.log( bySel );
+
+   </script>
+</body>
+
+</html>
