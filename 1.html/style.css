@@ -1,0 +1,146 @@
+/* CSS Element Selector */
+h1 {
+	text-align: center;
+}
+
+/* CSS Grouping Selectors */
+h1, h4 {
+	color: red;
+	background: black;
+	padding: 15px;
+}
+
+/* CSS Class Selectors */
+.blue {
+	color: blue;
+}
+
+/*.center {
+	text-align: center;
+}
+*/
+
+h3.center {
+	text-align: center;
+}
+
+.blue.border {
+	border: 2px solid blue;
+}
+
+/* CSS ID Selector */
+#title {
+	font-size: 60px;
+}
+
+#title.bb-2 {
+	border-bottom: 2px solid;
+}
+
+/* CSS Universal Selector
+* {
+	border: 3px solid red;
+	margin: 10px;
+}
+*/
+
+/* CSS Descendant Selector
+div p {
+	background: green;
+	color: white;
+}
+*/
+
+/* CSS Child Selectors */
+div > p {
+	background: red;
+	color: white;
+}
+
+/* Adjacent Sibling Selector */
+div + p {
+	background: blue;
+	color: white;
+	padding: 15px;
+}
+
+/* General Sibling Selector */
+div ~ p {
+	text-align: center;
+}
+
+/* CSS Pseudo-classes */
+a:link, a:visited {
+	color: magenta;
+}
+
+/*
+a:visited {
+	color: gray;
+}
+*/
+
+a:hover {
+	color: pink;
+}
+
+a:active {
+	color: red;
+}
+
+.hide {
+	display: none;
+}
+
+section:hover .hide {
+	display: block;
+}
+
+ul li:first-child {
+	color: red;
+}
+
+ul li:last-child {
+	color: magenta;
+}
+
+/* CSS Pseudo-elements */
+.pseudo::first-line {
+	color: red;
+}
+
+.pseudo::first-letter {
+	color: white;
+	background: red;
+	padding: 15px;
+	display: inline-block;
+	line-height: 50px;
+	margin-right: 10px;
+}
+
+.pseudo-2::before {
+	content: url(images/yes.jpg);
+}
+
+.pseudo-2::after {
+	content: "";
+	width: 12px;
+	height: 12px;
+	display: inline-block;
+	background: red;
+	border-radius: 50%;
+	margin-left: 10px;
+}
+
+::selection {
+	background: lightgreen;
+}
+
+/* CSS Attribute Selectors */
+a[target="_blank"] {
+	color: white;
+	background: blue;
+	text-decoration: none;
+}
+
+

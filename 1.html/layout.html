@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Creating Website Layout using CSS</title>
+		
+		<style>
+			body {
+				margin: 0;
+			}
+			
+			header {
+				background: #666;
+				color: #fff;
+				text-align: center;
+			}
+			
+			header h1 {
+				margin: 0;
+				padding: 50px 30px;
+			}
+			
+			nav {
+				background: #444;
+			}
+			
+			nav a {
+				color: #fff;
+				text-decoration: none;
+				display: inline-block;
+				padding: 20px 30px;
+			}
+			
+			nav ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+			
+			@media (min-width: 768px) {
+				section {
+					display: flex;
+					padding: 0 10%;
+				}
+				
+				main {
+					width: 75%;
+				}
+				
+				aside {
+					width: 25%;
+					background: #f0f0f0;
+				}
+			}
+			
+			main, aside {
+				padding: 30px 15px;
+			}
+			
+			footer {
+				background: #666;
+				text-align: center;
+				color: #fff;
+				padding: 15px 30px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		
+		<!-- Header -->
+		<header>
+			<h1>My Bangladesh</h1>
+			
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Services</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<!-- Section -->
+		<section>
+			<main>
+				<article>
+					<h2>Dhaka</h2>
+					<p>Dhaka formerly known as Dacca, is the capital and the largest city of Bangladesh, as well as the largest city in the Bengal region. It is the tenth-largest and the fourth-most densely populous city in the world with, as of 2011, a population of 8.9 million residents within the city limits, and a population of over 21 million residents in the Greater Dhaka Area. Dhaka is the economic, political, and cultural center of Bangladesh, and is one of the major cities in South Asia, the largest city in Eastern South Asia and among the Bay of Bengal countries; and one of the largest cities among OIC countries. As part of the Bengal plain, the city is bounded by the Buriganga River, Turag River, Dhaleshwari River and Shitalakshya River.</p>
+					
+					<p>The area of Dhaka has been inhabited since the first millennium. The city rose to prominence in the 17th century as a provincial capital and commercial center of the Mughal Empire. Dhaka was the capital of the proto-industrialised Mughal Bengal for 75 years (1608–39 and 1660–1704).</p>
+				</article>
+				
+				<article>
+					<h2>Khulna</h2>
+					<p>Khulna is the third largest city in Bangladesh after Dhaka and Chittagong. It is the administrative territory of Khulna District and Khulna Division. The economy of Khulna is the third largest in the People's Republic of Bangladesh, contributing $53 billion in nominal gross state product and $95 billion in purchasing power parity (PPP) terms as of 2020.[citation needed] In the 2011 census, the city had a population of 663,342. The Khulna metropolitan area had an estimated population of 1.022 million in 2014.</p>
+					
+					<p>Khulna is located on the bank of the Rupsha and Bhairab Rivers. A centre of Bangladeshi industry, it hosts many national companies. Khulna is served by Port of Mongla (the second-largest seaport in the country), and is one of two principal naval-command centres hosting the Bangladesh Navy. The navy base BNS Titumir is in the city.</p>
+				</article>
+			</main><!-- main -->
+			
+			<aside>
+				<h3>Divisions of Bangladesh</h3>
+				<ul>
+					<li><a href="#">Barisal</a></li>
+					<li><a href="#">Chittagong</a></li>
+					<li><a href="#">Dhaka</a></li>
+					<li><a href="#">Khulna</a></li>
+					<li><a href="#">Mymensingh</a></li>
+					<li><a href="#">Rajshahi</a></li>
+					<li><a href="#">Rangpur</a></li>
+					<li><a href="#">Sylhet</a></li>
+				</ul>
+				
+				<h3>The rivers of Bangladesh</h3>
+				<ul>
+					<li><a href="#">Surma</a></li>
+					<li><a href="#">Meghna</a></li>
+					<li><a href="#">Karatoya</a></li>
+					<li><a href="#">Padma </a></li>
+					<li><a href="#">Brahmaputra</a></li>
+					<li><a href="#">Jamuna</a></li>
+					<li><a href="#">Chitra</a></li>
+					<li><a href="#">Bhairab</a></li>
+					<li><a href="#">Dhaleswari</a></li>
+					<li><a href="#">Rupsa</a></li>
+					<li><a href="#">Pasur</a></li>
+					<li><a href="#">Karnaphuli</a></li>
+					<li><a href="#">Teesta</a></li>
+				</ul>
+			</aside>
+		</section>
+		
+		<!-- Footer -->
+		<footer>
+			<p>&copy; 2021. All rights reserved.</p>
+		</footer>
+
+	</body>
+</html>
