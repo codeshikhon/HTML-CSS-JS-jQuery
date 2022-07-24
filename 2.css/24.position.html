@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS Position - How an Element is Positioned</title>
+		
+		<style>
+		
+			h1 {
+				text-align: center;
+				margin: 50px 0;
+			}
+			
+			img {
+					vertical-align: middle;
+			}
+			
+			div {
+				width: 300px;
+				margin: 0 auto;
+				border: 2px solid red;
+				position: relative;
+			}
+			
+			div a:after {
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				background-color: #00000057;
+				margin: 0;
+				right: 0;
+				top: 0;
+				padding: 10px;
+				box-sizing: border-box;
+				text-align: center;
+				color: #fff;
+				opacity: 0;
+				transition: opacity 0.4s;
+			}
+			
+			div a:hover:after{
+				opacity: 1;
+			}
+			
+			a.scroll-top {
+				position: fixed;
+				right: 20px;
+				bottom: 20px;
+				background-color: #0000006b;
+				padding: 5px 15px;
+			}
+			
+			a.scroll-top svg {
+				width: 24px;
+				fill: #fff;
+			}
+			
+			.sticky-1 {
+				position: sticky;
+				top: 0;
+			}
+			
+			.sticky-2 {
+				position: sticky;
+				top: 50px;
+			}
+			
+		</style>
+	</head>
+	
+	<body style="padding-bottom: 3000px" id="scrollto">
+	
+		<h1>CSS Position Property - How an Element is Positioned</h1>
+		
+		<div>
+			<a href="https://www.facebook.com/"><img src="images/photo.jpg" width="300"></a>
+		</div>
+		
+		<h2 class="sticky-1">Sticky 1</h2>
+		
+		<p style="padding-bottom: 500px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+		
+		<h2 class="sticky-2">Sticky 2</h2>
+		
+		<p style="padding-bottom: 500px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+		
+		<a href="#scrollto" class="scroll-top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z"/></svg></a>
+	
+	</body>
+</html>

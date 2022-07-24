@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Design Website Header and Menu</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet">
+
+   <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+   <header class="site-header">
+      <div class="container">
+         <div class="site-branding">
+            <a class="logo-link" href="#"><img src="images/Logo.png" alt="Site Logo"></a>
+         </div>
+
+         <span class="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+               <path
+                  d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z" />
+            </svg></span>
+
+         <nav class="main-navigation">
+            <ul>
+               <li><a href="#">Home</a></li>
+               <li><a href="#">About</a></li>
+               <li class="menu-item-has-children">
+                  <a href="#">Services <span class="menu-item-toggle"></span></a>
+                  <ul>
+                     <li><a href="#">Service Item 1</a></li>
+                     <li><a href="#">Service Item 2</a></li>
+                     <li class="menu-item-has-children">
+                        <a href="#">Service Item 3 <span class="menu-item-toggle"></span></a>
+                        <ul>
+                           <li><a href="#">Service Sub Item 1</a></li>
+                           <li><a href="#">Service Sub Item 2</a></li>
+                           <li><a href="#">Service Sub Item 3</a></li>
+                           <li><a href="#">Service Sub Item 4</a></li>
+                           <li><a href="#">Service Sub Item 5</a></li>
+                        </ul>
+                     </li>
+                     <li><a href="#">Service Item 4</a></li>
+                     <li><a href="#">Service Item 5</a></li>
+                  </ul>
+               </li>
+               <li class="menu-item-has-children">
+                  <a href="#">Portfolio <span class="menu-item-toggle"></span></a>
+                  <ul>
+                     <li><a href="#">Portfolio Item 1</a></li>
+                     <li><a href="#">Portfolio Item 2</a></li>
+                     <li><a href="#">Portfolio Item 3</a></li>
+                     <li><a href="#">Portfolio Item 4</a></li>
+                     <li><a href="#">Portfolio Item 5</a></li>
+                  </ul>
+               </li>
+               <li><a href="#">Contact</a></li>
+            </ul>
+         </nav>
+      </div>
+   </header>
+
+   <section id="call-to-action">
+      <div class="container">
+
+         <h1 class="animateit animate_fadeInUp">Multi Purpose HTML Template</h1>
+
+         <p class="animateit animate_fadeInUp" style="animation-delay: 0.3s">Lorem Ipsum is simply dummy text of the
+            printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+            1500s</p>
+
+         <a href="#" class="cta-link animateit animate_fadeInUp" style="animation-delay: 0.5s">Call to Action</a>
+
+      </div>
+   </section>
+
+   <section id="about">
+      <div class="container">
+
+         <h2>About Me</h2>
+
+         <div class="columns">
+
+            <div class="col col-left">
+               <img src="images/photo.jpg">
+            </div>
+
+            <div class="col col-right">
+               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod nisi voluptates, quisquam doloremque
+                  optio, explicabo numquam eum, quos esse eveniet minima cumque modi maiores. Dolorem quibusdam dolor
+                  quaerat illum perspiciatis consequuntur, quidem blanditiis tenetur soluta? Suscipit voluptatem sit
+                  dolore excepturi? Harum ullam velit id unde placeat ab necessitatibus iste quam!</p>
+
+               <p>Iusto soluta placeat facilis ullam harum sequi quis illum amet dolorem omnis aliquid possimus
+                  voluptate earum fugit totam cumque maiores molestias nemo minus error, officiis praesentium! Doloribus
+                  sed ipsum, fugiat ex suscipit officia, nobis minus odit debitis non cum impedit magni dicta. Ab nobis
+                  officiis molestias laboriosam non laborum reprehenderit.</p>
+            </div>
+
+         </div>
+
+      </div>
+   </section>
+
+   <section id="services">
+      <div class="container">
+
+         <h2>Our Services</h2>
+
+         <div class="columns">
+
+            <div class="col">
+               <img src="images/icons/browser.svg" width="55">
+               <h3>Web Design</h3>
+               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum standard dummy
+                  text.</p>
+            </div>
+
+            <div class="col">
+               <img src="images/icons/paintbrush.svg" width="30">
+               <h3>Graphic Design</h3>
+               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum standard dummy
+                  text.</p>
+            </div>
+
+            <div class="col">
+               <img src="images/icons/laptop.svg" width="52">
+               <h3>Web Development</h3>
+               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum standard dummy
+                  text.</p>
+            </div>
+
+            <div class="col">
+               <img src="images/icons/mobile.svg" width="35">
+               <h3>Mobile Development</h3>
+               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum standard dummy
+                  text.</p>
+            </div>
+
+         </div>
+
+      </div>
+   </section>
+
+   <section id="portfolio">
+      <div class="container">
+
+         <h2>Portfolio</h2>
+
+         <div class="columns">
+
+            <figure class="portfolio-item">
+               <a href="#"><img src="images/portfolio/almonds.jpg"></a>
+            </figure>
+
+            <figure class="portfolio-item">
+               <a href="#"><img src="images/portfolio/bathroom.png"></a>
+            </figure>
+
+            <figure class="portfolio-item">
+               <a href="#"><img src="images/portfolio/essential-oil.jpg"></a>
+            </figure>
+
+            <figure class="portfolio-item">
+               <a href="#"><img src="images/portfolio/headphones.jpg"></a>
+            </figure>
+
+            <figure class="portfolio-item">
+               <a href="#"><img src="images/portfolio/iphone.jpg"></a>
+            </figure>
+
+            <figure class="portfolio-item">
+               <a href="#"><img src="images/portfolio/medicinal-flower.jpg"></a>
+            </figure>
+
+            <figure class="portfolio-item">
+               <a href="#"><img src="images/portfolio/strawberries.jpg"></a>
+            </figure>
+
+            <figure class="portfolio-item">
+               <a href="#"><img src="images/portfolio/technology.jpg"></a>
+            </figure>
+
+         </div>
+
+      </div>
+   </section>
+
+   <section id="blog">
+      <div class="container">
+
+         <h2>Recent Blogs</h2>
+
+         <ul class="recent-posts">
+            <li class="post">
+               <figure class="post-image">
+                  <a href="#"><img src="images/blogs/text-formatting.jpg"></a>
+               </figure>
+
+               <div class="category">HTML</div>
+
+               <h3 class="post-title"><a href="#">HTML Text Formatting</a></h3>
+
+               <div class="post-date"><time>16 May, 2022</time></div>
+            </li>
+
+            <li class="post">
+               <figure class="post-image">
+                  <a href="#"><img src="images/blogs/table.jpg"></a>
+               </figure>
+
+               <div class="category">CSS</div>
+
+               <h3 class="post-title"><a href="#">Responsive HTML Table</a></h3>
+
+               <div class="post-date"><time>04 June, 2021</time></div>
+            </li>
+
+            <li class="post">
+               <figure class="post-image">
+                  <a href="#"><img src="images/blogs/iframes.png"></a>
+               </figure>
+
+               <div class="category">HTML5</div>
+
+               <h3 class="post-title"><a href="#">Responsive HTML5 iframes</a></h3>
+
+               <div class="post-date"><time>04 January, 2021</time></div>
+            </li>
+
+            <li class="post">
+               <figure class="post-image">
+                  <a href="#"><img src="images/blogs/video.jpg"></a>
+               </figure>
+
+               <div class="category">JAVASCRIPT</div>
+
+               <h3 class="post-title"><a href="#">Responsive HTML5 Audio Video</a></h3>
+
+               <div class="post-date"><time>04 OCTOBER, 2020</time></div>
+            </li>
+         </ul>
+
+         <a class="show-more" href="#">Show More</a>
+
+      </div>
+   </section>
+
+   <section id="contact">
+      <div class="container">
+         <h2>Contact Us</h2>
+
+         <form method="post">
+
+            <div class="form-fields">
+               <div class="field">
+                  <input type="text" name="yourname" placeholder="Your Name">
+               </div>
+
+               <div class="field">
+                  <input type="email" name="youremail" placeholder="Your Email">
+               </div>
+            </div>
+
+            <textarea cols="22" rows="6" placeholder="Your Message"></textarea>
+
+            <input type="submit" value="Send Message">
+
+         </form>
+      </div>
+   </section>
+
+   <footer class="site-footer">
+      <div class="container">
+
+         <ul class="social-links">
+            <li><a href="#" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                     <path
+                        d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+                  </svg></a></li>
+
+            <li><a href="#" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                     <path
+                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+                  </svg></a></li>
+
+            <li><a href="#" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                     <path
+                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                  </svg></a></li>
+
+            <li><a href="#" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                     <path
+                        d="M186.5 293c0 19.3-14 25.4-31.2 25.4h-45.1v-52.9h46c18.6.1 30.3 7.8 30.3 27.5zm-7.7-82.3c0-17.7-13.7-21.9-28.9-21.9h-39.6v44.8H153c15.1 0 25.8-6.6 25.8-22.9zm132.3 23.2c-18.3 0-30.5 11.4-31.7 29.7h62.2c-1.7-18.5-11.3-29.7-30.5-29.7zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zM271.7 185h77.8v-18.9h-77.8V185zm-43 110.3c0-24.1-11.4-44.9-35-51.6 17.2-8.2 26.2-17.7 26.2-37 0-38.2-28.5-47.5-61.4-47.5H68v192h93.1c34.9-.2 67.6-16.9 67.6-55.9zM380 280.5c0-41.1-24.1-75.4-67.6-75.4-42.4 0-71.1 31.8-71.1 73.6 0 43.3 27.3 73 71.1 73 33.2 0 54.7-14.9 65.1-46.8h-33.7c-3.7 11.9-18.6 18.1-30.2 18.1-22.4 0-34.1-13.1-34.1-35.3h100.2c.1-2.3.3-4.8.3-7.2z" />
+                  </svg></a></li>
+
+            <li><a href="#" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                     <path
+                        d="M256 8C119.252 8 8 119.252 8 256s111.252 248 248 248 248-111.252 248-248S392.748 8 256 8zm163.97 114.366c29.503 36.046 47.369 81.957 47.835 131.955-6.984-1.477-77.018-15.682-147.502-6.818-5.752-14.041-11.181-26.393-18.617-41.614 78.321-31.977 113.818-77.482 118.284-83.523zM396.421 97.87c-3.81 5.427-35.697 48.286-111.021 76.519-34.712-63.776-73.185-116.168-79.04-124.008 67.176-16.193 137.966 1.27 190.061 47.489zm-230.48-33.25c5.585 7.659 43.438 60.116 78.537 122.509-99.087 26.313-186.36 25.934-195.834 25.809C62.38 147.205 106.678 92.573 165.941 64.62zM44.17 256.323c0-2.166.043-4.322.108-6.473 9.268.19 111.92 1.513 217.706-30.146 6.064 11.868 11.857 23.915 17.174 35.949-76.599 21.575-146.194 83.527-180.531 142.306C64.794 360.405 44.17 310.73 44.17 256.323zm81.807 167.113c22.127-45.233 82.178-103.622 167.579-132.756 29.74 77.283 42.039 142.053 45.189 160.638-68.112 29.013-150.015 21.053-212.768-27.882zm248.38 8.489c-2.171-12.886-13.446-74.897-41.152-151.033 66.38-10.626 124.7 6.768 131.947 9.055-9.442 58.941-43.273 109.844-90.795 141.978z" />
+                  </svg></a></li>
+         </ul>
+
+         <p class="copyright">Copyright © 2020 AWD-4, All rights Reserved.<br>
+            Designed by <a href="#" target="_blank">Shujon Mahmud</a></p>
+
+      </div>
+   </footer>
+
+   <script src="js/menu.js"></script>
+</body>
+
+</html>

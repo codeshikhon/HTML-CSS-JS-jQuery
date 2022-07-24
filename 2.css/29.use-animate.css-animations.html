@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>How to Use Animate.css Animations</title>
+		
+		<style>
+		
+			body {
+				padding: 100px;
+			}
+			
+			h1 {
+				text-align: center;
+			}
+
+			.animateit {
+				-webkit-animation-duration: 1s;
+				animation-duration: 1s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			
+			@-webkit-keyframes fadeInUp {
+				from {
+					opacity: 0;
+					-webkit-transform: translate3d(0, 100%, 0);
+					transform: translate3d(0, 100%, 0);
+				}
+
+				to {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0, 0);
+					transform: translate3d(0, 0, 0);
+				}
+			}
+			@keyframes fadeInUp {
+				from {
+					opacity: 0;
+					-webkit-transform: translate3d(0, 100%, 0);
+					transform: translate3d(0, 100%, 0);
+				}
+
+				to {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0, 0);
+					transform: translate3d(0, 0, 0);
+				}
+			}
+			.animate_fadeInUp {
+				-webkit-animation-name: fadeInUp;
+				animation-name: fadeInUp;
+			}
+			
+			
+			@-webkit-keyframes flash {
+				from,
+				50%,
+				to {
+					opacity: 1;
+				}
+
+				25%,
+				75% {
+					opacity: 0;
+				}
+			}
+			@keyframes flash {
+				from,
+				50%,
+				to {
+					opacity: 1;
+				}
+
+				25%,
+				75% {
+					opacity: 0;
+				}
+			}
+			.animate_flash {
+				-webkit-animation-name: flash;
+				animation-name: flash;
+			}
+			
+			@-webkit-keyframes fadeInDown {
+				from {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+
+				to {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0, 0);
+					transform: translate3d(0, 0, 0);
+				}
+			}
+			@keyframes fadeInDown {
+				from {
+					opacity: 0;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+
+				to {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0, 0);
+					transform: translate3d(0, 0, 0);
+				}
+			}
+			
+			.animate_fadeInDown {
+				-webkit-animation-name: fadeInDown;
+				animation-name: fadeInDown;
+			}
+		</style>
+	</head>
+	
+	<body>
+
+		<h1 class="animateit animate_fadeInUp">How to Use Animate.css Animations</h1>
+		<h1 class="animateit animate_flash">How to Use Animate.css Animations</h1>
+		<h1 class="animateit animate_fadeInDown">How to Use Animate.css Animations</h1>
+
+	</body>
+</html>

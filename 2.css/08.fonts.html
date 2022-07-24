@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS Fonts</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500&family=Poppins:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+	
+		
+		<style>
+		
+			@font-face {
+					font-family: 'Roboto Condensed';
+					src: url('fonts/RobotoCondensed-Light.woff2') format('woff2'),
+							url('fonts/RobotoCondensed-Light.woff') format('woff');
+					font-weight: 300;
+					font-style: normal;
+					font-display: swap;
+			}
+
+			@font-face {
+					font-family: 'Roboto Condensed';
+					src: url('fonts/RobotoCondensed-Bold.woff2') format('woff2'),
+							url('fonts/RobotoCondensed-Bold.woff') format('woff');
+					font-weight: bold;
+					font-style: normal;
+					font-display: swap;
+			}
+
+			@font-face {
+					font-family: 'Roboto Condensed';
+					src: url('fonts/RobotoCondensed-Regular.woff2') format('woff2'),
+							url('fonts/RobotoCondensed-Regular.woff') format('woff');
+					font-weight: normal;
+					font-style: normal;
+					font-display: swap;
+			}
+
+
+		
+			html {
+				font-size: 14px;
+			}
+			
+			h1 {
+				font-family: 'Times New Roman';
+			}
+			
+			h1.courier-new {
+				font-family: 'Courier New';
+			}
+			
+			h1.italic {
+				font-style: italic;
+			}
+			
+			h1.weight {
+				font-weight: normal;
+			}
+			
+			h1.size-px {
+				font-size: 16px;
+			}
+			
+			h1.size-em {
+				font-size: 2.5em; /* 1em is 2.5em*10px = 25px */
+			}
+			
+			div {
+				font-size: 10px;
+			}
+
+			h1.size-rem {
+				font-size: 2.5rem; /* 2.5rem is 2.5em*14px = 35px */
+			}
+			
+			h1.montserrat {
+				font-family: 'Montserrat', sans-serif;
+			}
+			
+			h1.poppins {
+				font: 20px 'Poppins', sans-serif;
+			}
+			
+			h1.roboto-cond {
+				font-family: 'Roboto Condensed', sans-serif;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		
+		<h1>CSS Fonts</h1>
+		
+		<h1 class="courier-new">Font Style using Courier New Font</h1>
+		
+		<h1 class="italic">Italic Style Font</h1>
+		
+		<h1 class="weight">Text with Normal Weight</h1>
+		
+		<h1 class="size-px">Font Size with px unit</h1>
+		
+		<div>
+			<h1 class="size-em">Font Size with em unit</h1>
+		</div>
+		
+		<h1 class="size-rem">Font Size with rem unit</h1>
+		
+		<h1 class="montserrat">Montserrat Font Style</h1>
+		
+		<h1 class="poppins">Poppins Font Style</h1>
+		
+		<h1 class="roboto-cond">Roboto Condensed Font Style</h1>
+		
+	</body>
+</html>

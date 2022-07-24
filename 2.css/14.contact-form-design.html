@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Contact Form Design</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+		
+		<style>
+		
+			* {
+				box-sizing: border-box;
+			}
+			
+			body {
+				font-family: 'Roboto', sans-serif;
+			}
+			
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 30px;
+			}
+
+			section h2 {
+				text-align: center;
+				font-size: 2.2em;
+				text-transform: uppercase;
+			}
+			
+			input[type="text"],
+			input[type="email"],
+			textarea {
+				width: 100%;
+				padding: 10px;
+				font-size: 16px;
+				margin-top: 15px;
+			}
+			
+			textarea {
+				min-height: 100px;
+				resize: vertical;
+			}
+			
+			input[type="submit"] {
+				font-size: 16px;
+				padding: 15px 25px;
+				cursor: pointer;
+			}
+			
+			#contact {
+				padding: 50px 0;
+			}
+			
+			#contact form {
+				max-width: 700px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			#contact .field {
+				float: left;
+				width: 50%;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			
+			#contact .form-fields {
+				margin-left: -10px;
+				margin-right: -10px;
+			}
+			
+			#contact input[type="text"],
+			#contact input[type="email"],
+			#contact textarea {
+				border: none;
+				outline: none;
+				border-radius: 0;
+				border-bottom: 1px solid #888;
+				padding: 10px 5px;
+			}
+			
+			#contact input[type="submit"] {
+				border: none;
+				outline: none;
+				border-radius: 0;
+				background-color: #000;
+				color: #fff;
+				margin: 20px auto;
+				display: table;
+				transition: padding 0.5s;
+			}
+			
+			#contact input[type="submit"]:hover {
+				padding: 15px 40px;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		
+		<section id="contact">
+		
+			<div class="container">
+				<h2>Contact Us</h2>
+				
+				<form method="post">
+				
+					<div class="form-fields">
+						<div class="field">
+							<input type="text" name="yourname" placeholder="Your Name">
+						</div>
+						
+						<div class="field">
+							<input type="email" name="youremail" placeholder="Your Email">
+						</div>
+					</div>
+					
+					<textarea cols="22" rows="6" placeholder="Your Message"></textarea>
+					
+					<input type="submit" value="Send Message">
+					
+				</form>
+			</div>
+		
+		</section>	
+		
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Responsive Website Design with CSS</title>
+
+		<link rel="stylesheet" type="text/css" href="css/responsive-web-design.css">
+	</head>
+	
+	<body>
+	
+		<h1 class="styled">Responsive Website Design with CSS</h1>
+		
+		<div class="card-holder">
+			<img src="images/photo.jpg" width="600">
+			
+			<div class="card-info">
+				<h2>Amazing Feeling of Nature</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel purus ut nibh pulvinar molestie in in nulla.</p>
+			</div>
+		</div>
+	
+		<div class="container">
+		
+			<h1>Responsive HTML Video</h1>
+			<video width="700" height="500" controls poster="images/dhaka.jpg">
+				<source src="files/movie.mp4" type="video/mp4">
+				<source src="movie.ogg" type="video/ogg">
+				Your browser does not support the video element.
+			</video>	
+			
+			<h1>Responsive YouTube Video</h1>
+			<div class="iframe-wrapper">
+				<iframe width="700" height="393" src="https://www.youtube.com/embed/Qs5jjVYhdAg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			
+			<h1>Show Different Images based on the Viewport Width</h1>
+			<picture>
+				<source srcset="images/picture3.jpg" media="(max-width: 400px)">
+				<source srcset="images/picture2.jpg" media="(max-width: 768px)">
+				<img src="images/picture1.jpg" alt="Flowers">
+			</picture>
+			
+		</div>
+	
+	</body>
+</html>

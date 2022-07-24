@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Design Portfolio Section</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+		
+		<style>
+			
+			* {
+				box-sizing: border-box;
+			}
+			
+			body {
+				font-family: 'Roboto', sans-serif;
+				margin: 0;
+				line-height: 1.5;
+			}
+			
+			img {
+				max-width: 100%;
+				height: auto;
+				vertical-align: middle;
+			}
+			
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 30px;
+			}
+			
+			section h2 {
+				text-align: center;
+				font-size: 2.2em;
+				text-transform: uppercase;
+			}
+			
+			.columns {
+				display: flex;
+			}
+			
+			#portfolio {
+				padding: 50px 0;
+			}
+			
+			#portfolio .columns {
+				flex-wrap: wrap;
+			}
+			
+			#portfolio .portfolio-item {
+				margin: 8px;
+				width: calc(25% - 16px);
+				overflow: hidden;
+			}
+			
+			#portfolio .portfolio-item a {
+				position: relative;
+				display: block;
+			}
+			
+			#portfolio .portfolio-item a:after {
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				background-color: #00000057;
+				background-image: url("images/zoom.svg");
+				background-repeat: no-repeat;
+				background-size: 32px;
+				background-position: center;
+				margin: 0;
+				right: 0;
+				top: 0;
+				padding: 10px;
+				box-sizing: border-box;
+				text-align: center;
+				color: #fff;
+				opacity: 0;
+				transition: opacity 0.5s;
+			}
+			
+			#portfolio .portfolio-item a:hover:after{
+				opacity: 1;
+			}
+			
+			#portfolio .portfolio-item a img {
+				transition: transform 0.5s;
+			}
+			
+			#portfolio .portfolio-item a:hover img {
+				transform: scale(1.2);
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		
+		<section id="portfolio">
+		
+			<div class="container">
+			
+				<h2>Portfolio</h2>
+				
+				<div class="columns">
+				
+					<figure class="portfolio-item">
+						<a href="#"><img src="images/portfolio/almonds.jpg"></a>
+					</figure>
+					
+					<figure class="portfolio-item">
+						<a href="#"><img src="images/portfolio/bathroom.png"></a>
+					</figure>
+					
+					<figure class="portfolio-item">
+						<a href="#"><img src="images/portfolio/essential-oil.jpg"></a>
+					</figure>
+					
+					<figure class="portfolio-item">
+						<a href="#"><img src="images/portfolio/headphones.jpg"></a>
+					</figure>
+					
+					<figure class="portfolio-item">
+						<a href="#"><img src="images/portfolio/iphone.jpg"></a>
+					</figure>
+					
+					<figure class="portfolio-item">
+						<a href="#"><img src="images/portfolio/medicinal-flower.jpg"></a>
+					</figure>
+					
+					<figure class="portfolio-item">
+						<a href="#"><img src="images/portfolio/strawberries.jpg"></a>
+					</figure>
+					
+					<figure class="portfolio-item">
+						<a href="#"><img src="images/portfolio/technology.jpg"></a>
+					</figure>
+				
+				</div>
+			
+			</div>
+			
+		</section>
+
+	</body>
+</html>

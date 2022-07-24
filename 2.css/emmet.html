@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Emmet</title>
+
+   <!-- link:css -->
+   <link rel="stylesheet" href="css/emmet.css">
+</head>
+<body>
+   
+   <!-- div | header | footer | a | a:link | img -->
+   <div></div>
+   <header></header>
+   <footer></footer>
+   <a href=""></a>
+   <a href="http://"></a>
+   <img src="" alt="">
+
+   <!-- lorem20 -->
+   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic non veniam quia molestiae quae quas temporibus est nam alias soluta!
+
+   <!-- p>lorem20 -->
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis eveniet sed reiciendis hic ipsam nisi, officia iure asperiores at dolores.</p>
+
+   <!-- p*3 -->
+   <p></p>
+   <p></p>
+   <p></p>
+
+   <!-- p*3>lorem30 -->
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium odio quibusdam voluptatem! Voluptas repellat placeat saepe, et quod sequi soluta fuga exercitationem ipsum fugit nisi cumque. Suscipit facilis culpa harum!</p>
+   <p>Ratione eveniet adipisci ipsum architecto quos dolorum dolorem cupiditate, commodi non similique! Nihil consequatur placeat blanditiis suscipit dolorem sint? Quod perspiciatis alias magnam quam consectetur cupiditate non in eius itaque!</p>
+   <p>Ipsam labore itaque voluptates exercitationem error voluptatum? Deleniti modi, molestias corrupti aut error vitae laboriosam, corporis rerum quia tempora laudantium facilis. Deserunt maiores fugiat, voluptate libero quia qui error quibusdam!</p>
+
+   <!-- .container | header.site-header -->
+   <div class="container"></div>
+   <header class="site-header"></header>
+
+   <!-- #masthead -->
+   <div id="masthead"></div>
+
+   <!-- header#masthead.site-header -->
+   <header id="masthead" class="site-header"></header>
+
+   <!-- header#masthead.site-header.sticky-header -->
+   <header id="masthead" class="site-header sticky-header"></header>
+
+   <!-- header.site-header>.col -->
+   <header class="site-header">
+      <div class="col"></div>
+   </header>
+
+   <!-- header.site-header>.col*2 -->
+   <header class="site-header">
+      <div class="col"></div>
+      <div class="col"></div>
+   </header>
+
+   <!-- header.site-header>.site-branding+nav -->
+   <header class="site-header">
+      <div class="site-branding"></div>
+      <nav></nav>
+   </header>
+
+   <!-- header.site-header>.site-branding+nav.main-navigation -->
+   <header class="site-header">
+      <div class="site-branding"></div>
+      <nav class="main-navigation"></nav>
+   </header>
+
+   <!-- header.site-header>(.site-branding>a)+nav.main-navigation -->
+   <header class="site-header">
+      <div class="site-branding"><a href=""></a></div>
+      <nav class="main-navigation"></nav>
+   </header>
+
+   <!-- header.site-header>(.site-branding>a>img)+nav.main-navigation -->
+   <header class="site-header">
+      <div class="site-branding"><a href=""><img src="" alt=""></a></div>
+      <nav class="main-navigation"></nav>
+   </header>
+
+   <!-- header.site-header>(.site-branding>a>img)+nav.main-navigation>ul -->
+   <header class="site-header">
+      <div class="site-branding"><a href=""><img src="" alt=""></a></div>
+      <nav class="main-navigation">
+         <ul></ul>
+      </nav>
+   </header>
+
+   <!-- header.site-header>(.site-branding>a>img)+nav.main-navigation>ul>li*5 -->
+   <header class="site-header">
+      <div class="site-branding"><a href=""><img src="" alt=""></a></div>
+      <nav class="main-navigation">
+         <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+         </ul>
+      </nav>
+   </header>
+
+   <!-- header.site-header>(.site-branding>a>img)+nav.main-navigation>ul>li*5>a -->
+   <header class="site-header">
+      <div class="site-branding"><a href=""><img src="" alt=""></a></div>
+      <nav class="main-navigation">
+         <ul>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+         </ul>
+      </nav>
+   </header>
+
+   <!-- header.site-header>(.site-branding>a>img)+nav.main-navigation>ul>li*5>a{Menu Item $$} -->
+   <header class="site-header">
+      <div class="site-branding"><a href=""><img src="" alt=""></a></div>
+      <nav class="main-navigation">
+         <ul>
+            <li><a href="">Menu Item 01</a></li>
+            <li><a href="">Menu Item 02</a></li>
+            <li><a href="">Menu Item 03</a></li>
+            <li><a href="">Menu Item 04</a></li>
+            <li><a href="">Menu Item 05</a></li>
+         </ul>
+      </nav>
+   </header>
+
+   <!-- header.site-header>(.site-branding>a>img)+nav.main-navigation>ul>li.menu-item-$*5>a{Menu Item $} -->
+   <header class="site-header">
+      <div class="site-branding"><a href=""><img src="" alt=""></a></div>
+      <nav class="main-navigation">
+         <ul>
+            <li class="menu-item-1"><a href="">Menu Item 1</a></li>
+            <li class="menu-item-2"><a href="">Menu Item 2</a></li>
+            <li class="menu-item-3"><a href="">Menu Item 3</a></li>
+            <li class="menu-item-4"><a href="">Menu Item 4</a></li>
+            <li class="menu-item-5"><a href="">Menu Item 5</a></li>
+         </ul>
+      </nav>
+   </header>
+
+   <!-- header.site-header>(.site-branding>a>img)+nav.main-navigation>ul>li.item-$*5>a[title=Menu Item $]{Menu Item $$} -->
+   <header class="site-header">
+      <div class="site-branding"><a href=""><img src="" alt=""></a></div>
+      <nav class="main-navigation">
+         <ul>
+            <li class="item-1"><a href="" title="Menu Item 1">Menu Item 1</a></li>
+            <li class="item-2"><a href="" title="Menu Item 2">Menu Item 2</a></li>
+            <li class="item-3"><a href="" title="Menu Item 3">Menu Item 3</a></li>
+            <li class="item-4"><a href="" title="Menu Item 4">Menu Item 4</a></li>
+            <li class="item-5"><a href="" title="Menu Item 5">Menu Item 5</a></li>
+         </ul>
+      </nav>
+   </header>
+
+   <!-- (header.site-header>(.site-branding>a>img)+nav.main-navigation>ul>li.item-$*5>a[title=Menu Item $]{Menu Item $$})+footer.site-footer -->
+   <header class="site-header">
+      <div class="site-branding"><a href=""><img src="" alt=""></a></div>
+      <nav class="main-navigation">
+         <ul>
+            <li class="item-1"><a href="" title="Menu" Item="" 1="">Menu Item 01</a></li>
+            <li class="item-2"><a href="" title="Menu" Item="" 2="">Menu Item 02</a></li>
+            <li class="item-3"><a href="" title="Menu" Item="" 3="">Menu Item 03</a></li>
+            <li class="item-4"><a href="" title="Menu" Item="" 4="">Menu Item 04</a></li>
+            <li class="item-5"><a href="" title="Menu" Item="" 5="">Menu Item 05</a></li>
+         </ul>
+      </nav>
+   </header>
+   <footer class="site-footer"></footer>
+
+   <!-- (header.site-header>(.site-branding>a>img)+nav.main-navigation>ul>li.item-$*5>a[title=Menu Item $]{Menu Item $$})+footer.site-footer>.container>p>{&copy; Copyright 2022} -->
+   <header class="site-header">
+      <div class="site-branding"><a href=""><img src="" alt=""></a></div>
+      <nav class="main-navigation">
+         <ul>
+            <li class="item-1"><a href="" title="Menu" Item="" 1="">Menu Item 01</a></li>
+            <li class="item-2"><a href="" title="Menu" Item="" 2="">Menu Item 02</a></li>
+            <li class="item-3"><a href="" title="Menu" Item="" 3="">Menu Item 03</a></li>
+            <li class="item-4"><a href="" title="Menu" Item="" 4="">Menu Item 04</a></li>
+            <li class="item-5"><a href="" title="Menu" Item="" 5="">Menu Item 05</a></li>
+         </ul>
+      </nav>
+   </header>
+   <footer class="site-footer">
+      <div class="container">
+         <p>&copy; Copyright 2022</p>
+      </div>
+   </footer>
+
+</body>
+</html>
