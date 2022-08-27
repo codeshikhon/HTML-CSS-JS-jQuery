@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Creating Tabs using jQuery</title>
+   <style>
+      .container {
+         max-width: 800px;
+         padding: 60px;
+         margin: 0 auto;
+      }
+
+      #myTab {
+         padding: 1.5rem;
+         border: 1px solid #dee2e6;
+         border-radius: .25rem;
+      }
+
+      .tabs {
+         display: flex;
+         list-style: none;
+         margin: 0;
+         padding: 0;
+         border-bottom: 1px solid #dee2e6;
+      }
+
+      .tabs li {
+         padding: 0.5rem 1rem;
+         color: #0d6efd;
+         margin-bottom: -1px;
+         background: 0 0;
+         border: 1px solid transparent;
+         border-top-left-radius: 0.25rem;
+         border-top-right-radius: 0.25rem;
+         cursor: pointer;
+      }
+
+      .tabs li.active {
+         color: #495057;
+         background-color: #fff;
+         border-color: #dee2e6 #dee2e6 #fff;
+      }
+
+      .tab-content {
+         display: none;
+      }
+
+      .tab-content.active {
+         display: block;
+      }
+   </style>
+   <script src="jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+   <div class="container">
+      <h1>Creating Tabs using jQuery</h1>
+
+      <div id="myTab">
+         <ul class="tabs">
+            <li data-toggle="tab-1" class="active">Tab 1</li>
+            <li data-toggle="tab-2">Tab 2</li>
+            <li data-toggle="tab-3">Tab 3</li>
+            <li data-toggle="tab-4">Tab 4</li>
+         </ul>
+
+         <div class="tab-content active" id="tab-1">
+            <h2>Tab Content Title 1</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore accusantium illo beatae ab, distinctio
+               debitis odio ipsam fugiat ex est cupiditate provident laudantium, voluptatum facilis officiis incidunt,
+               veniam porro ullam quaerat? Voluptatibus fuga, ullam aperiam, ipsum ducimus expedita, corrupti sunt sed
+               tempore quidem itaque dignissimos. Velit et doloribus dolorem possimus.</p>
+         </div>
+
+         <div class="tab-content" id="tab-2">
+            <h2>Tab Content Title 2</h2>
+            <p>Alias expedita harum accusamus, incidunt in blanditiis exercitationem mollitia ipsa, officia corrupti
+               facere tempore, molestias laborum eaque? Rem soluta quas omnis ad architecto cum totam libero iusto
+               alias. Provident, repudiandae? Autem, consequatur. A, maiores cumque non numquam enim earum ipsum modi
+               harum perferendis nobis adipisci ab quo doloribus. Repellat, dolorem.</p>
+         </div>
+
+         <div class="tab-content" id="tab-3">
+            <h2>Tab Content Title 3</h2>
+            <p>Necessitatibus soluta aliquam, maxime rem, voluptatibus quis dolorum adipisci consequatur, vero harum
+               explicabo atque! Animi odio minus ex aperiam cupiditate tenetur esse accusantium reiciendis, consequuntur
+               itaque, dolorum mollitia nulla nisi commodi repellat dolores quam incidunt suscipit, qui molestias omnis
+               deserunt distinctio quae iusto? Vero sit consectetur doloremque esse quae iure.</p>
+         </div>
+
+         <div class="tab-content" id="tab-4">
+            <h2>Tab Content Title 4</h2>
+            <p>Inventore dignissimos totam ut veniam natus neque facilis excepturi, consectetur distinctio facere
+               ducimus harum quis quia unde perferendis maxime voluptas officia modi nesciunt non eum voluptatibus?
+               Molestiae ea, quo modi asperiores excepturi magnam nulla, doloremque non consequuntur incidunt reiciendis
+               odio, deleniti iste fugiat perferendis expedita officiis? Rem unde voluptates cupiditate?</p>
+         </div>
+      </div>
+   </div>
+
+   <script>
+      (function ($) {
+
+         $('.tabs li').click(function () {
+            if (!$(this).hasClass('active')) {
+               $('.tabs li').removeClass('active');
+               $(this).addClass('active');
+               let tabId = $(this).data('toggle');
+               $('.tab-content').hide();
+               $('#' + tabId).fadeIn();
+            }
+         });
+
+      })(jQuery)
+   </script>
+</body>
+
+</html>

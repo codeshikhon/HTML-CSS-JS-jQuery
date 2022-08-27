@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>How to Create Animation and Creating a Progress Bar</title>
+
+   <style>
+      h3 {
+         margin: 10px 0;
+      }
+
+      .container {
+         max-width: 800px;
+         padding: 60px;
+         margin: 0 auto;
+      }
+
+      .progressbar {
+         margin-bottom: 30px;
+      }
+
+      .percent-count {
+         float: right;
+         margin-top: -42px;
+      }
+   </style>
+   <script src="jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+   <div class="container">
+      <h1>How to Create Animation and Creating a Progress Bar</h1>
+
+      <h3>HTML</h3>
+      <div class="progressbar" data-width="80%" data-color="black"></div>
+
+      <h3>CSS</h3>
+      <div class="progressbar" data-width="68%" data-color="red"></div>
+
+      <h3>JavaScript</h3>
+      <div class="progressbar" data-width="85%" data-color="green"></div>
+
+      <h3>PHP</h3>
+      <div class="progressbar" data-width="75%" data-color="magenta"></div>
+
+      <!-- <button style="margin-bottom: 15px;">Start Animation</button>
+   <div style="width: 200px; height: 200px; background: green;position: relative;"></div> -->
+
+   </div>
+
+   <script>
+      (function ($) {
+
+         // jQuery Custom Animations
+         // $('button').click(function () {
+         //    // $('div').animate({
+         //    //    width: "400px"
+         //    // }, 3000, "linear", function() {
+         //    //    alert("fdkjfdklflkjl")
+         //    // });
+
+
+         //    $('div').animate({
+         //       width: "400px"
+         //    }, {
+         //       duration: 2000,
+         //       easing: "linear",
+         //       // complete: function() {
+         //       //    alert("fkldjklfjdkl")
+         //       // }
+         //    });
+         // })
+
+         $('.progressbar').each(function () {
+
+            let width = $(this).attr('data-width');
+            let color = $(this).attr('data-color');
+
+            $(this).css('background-color', '#ccc').html(`<div class="progress"></div><div class="percent-count">${width}</div>`).children('.progress').css({
+               'background-color': color,
+               'height': '10px',
+               'width': "0",
+            }).animate({
+               'width': width,
+            }, 1000);
+         });
+
+      })(jQuery)
+   </script>
+</body>
+
+</html>

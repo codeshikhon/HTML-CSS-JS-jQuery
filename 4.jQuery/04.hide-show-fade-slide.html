@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>jQuery Effects - Hiding/Showing, Fading and Sliding</title>
+   <script src="jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+   <h1>jQuery Effects - Hiding/Showing, Fading and Sliding</h1>
+   <button id="hide">Hide</button>
+   <button id="show">Show</button>
+   <button id="toggle">Hide/Show</button>
+   <p class="hideshow">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae hic, veniam ab magni totam
+      culpa sit amet exercitationem ex velit voluptas aut iusto fugiat alias provident cum rerum vel quod sunt delectus
+      mollitia? At fuga ab dicta itaque consequuntur facilis labore voluptatem omnis, inventore in veritatis soluta
+      dolor consectetur, iste voluptatum porro aut quidem distinctio optio quo eum commodi? At impedit, officia
+      temporibus repellendus enim nostrum possimus odit veritatis sed omnis nobis iusto maiores doloribus consequatur
+      aut odio aliquid vitae iure commodi quam cupiditate esse consequuntur minus? Harum qui libero iusto unde neque.
+      Iusto sint deleniti blanditiis in odio! Assumenda.</p>
+
+      <button id="fadeout">Fade Out</button>
+      <button id="fadein">Fade In</button>
+      <button id="fadetoggle">Fade In/Out</button>
+      <p class="fadeinout">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati libero vel in fuga recusandae autem quidem culpa nobis nesciunt natus? Aliquam numquam adipisci, voluptatum perspiciatis harum quidem ad quos sunt alias corporis laborum id repellat et ea, ipsa eaque nisi soluta aliquid iure fugit ipsum similique. Neque quisquam voluptatem officia saepe excepturi nulla fugit nostrum repudiandae voluptate quidem? Libero hic quasi cupiditate ea, minus voluptatem eveniet expedita, dolores, culpa aspernatur ipsa consequatur eligendi exercitationem aliquid blanditiis dolor facere error? Quae esse unde nemo similique nihil maxime maiores dolores laboriosam. Eos dolores sint, nihil cupiditate ratione nobis harum odio doloribus ducimus.</p>
+
+      <button id="slideup">Slide Up</button>
+      <button id="slidedown">Slide Down</button>
+      <button id="slidetoggle">Slide Up/Down</button>
+      <p class="slideupdown">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quae reprehenderit est sunt, adipisci illo voluptas itaque! Amet, nobis qui culpa illum autem sunt corporis hic deleniti nihil architecto rem, sequi doloremque officia, in cum. Repellat numquam id mollitia dolores earum temporibus fugiat modi ut perferendis repellendus nam suscipit, molestiae dicta nihil aliquid aperiam accusamus excepturi natus saepe eius sunt asperiores reprehenderit! Mollitia placeat nam voluptates ipsum, debitis eligendi et quos nostrum itaque odit ut ea provident. Unde temporibus nobis quos, aperiam eius eum tempore distinctio velit minus recusandae iure ad dolores molestiae non iusto repellendus vitae laborum? Aliquam, quaerat!</p>
+
+   <script>
+      (function ($) {
+
+         // jQuery Effects - Hiding/Showing
+         $('#hide').click(function () {
+            $('.hideshow').hide();
+            // $('.hideshow').hide( 2000 );
+            // $('.hideshow').hide( 2000, 'linear' );
+            // $('.hideshow').hide( 2000, function() {
+            //    alert( "fldkjflkd" );
+            // });
+         })
+
+         $('#show').click(function () {
+            $('.hideshow').show();
+         })
+
+         $('#toggle').click(function () {
+            $('.hideshow').toggle();
+         })
+
+         // jQuery Effects - Fading
+         $('#fadeout').click(function () {
+            $('.fadeinout').fadeOut();
+         })
+
+         $('#fadein').click(function () {
+            $('.fadeinout').fadeIn();
+         })
+
+         $('#fadetoggle').click(function () {
+            $('.fadeinout').fadeToggle();
+         })
+
+         // jQuery Effects - Sliding
+         $('#slideup').click(function () {
+            $('.slideupdown').slideUp();
+         })
+
+         $('#slidedown').click(function () {
+            $('.slideupdown').slideDown();
+         })
+
+         $('#slidetoggle').click(function () {
+            $('.slideupdown').slideToggle();
+         })
+
+      })(jQuery)
+   </script>
+</body>
+
+</html>

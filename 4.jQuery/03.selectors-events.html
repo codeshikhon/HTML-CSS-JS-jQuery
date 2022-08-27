@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>jQuery Selectors and Events</title>
+   <script src="jquery-3.6.0.min.js"></script>
+</head>
+
+<body style="padding-bottom: 3000px;">
+   <h1>jQuery Selectors and Events</h1>
+
+   <button id="button1" class="btn">Click me!</button>
+   <button id="double-click">Double Click</button>
+   <button id="mouse-enter">Mouse Enter</button>
+   <button id="mouse-leave">Mouse Leave</button>
+   <button id="multi-events">Multi Events</button>
+
+   <script>
+      (function ($) {
+
+         // $( '.btn' ).css( 'color', 'red' );
+
+         $('#button1').click(function () {
+            $(this).css('color', 'red');
+         });
+
+         $('#double-click').dblclick(function () {
+            $(this).css('color', 'orange');
+         });
+
+         $('#mouse-enter').mouseenter(function () {
+            $(this).css('color', 'green');
+         });
+
+         $('#mouse-leave').mouseleave(function () {
+            $(this).css('color', 'magenta');
+         });
+
+         $(document).on('click', '#button1', function () {
+            alert("fkdjflkhdh")
+         });
+
+         $( document ).on({
+            click: function () {
+               $(this).css('color', 'red');
+            },
+            dblclick: function () {
+               $(this).css('color', 'magenta');
+            },
+            mouseleave: function () {
+               $(this).css('color', 'orange');
+            },
+         }, '#multi-events');
+
+         $(document).scroll(function() {
+            console.log( $(this).scrollTop() + 'px' );
+         });
+
+      })(jQuery)
+   </script>
+</body>
+
+</html>

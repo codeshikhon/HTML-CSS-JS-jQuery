@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Fetch Data from Another Site with $.getJSON</title>
+
+   <style>
+      .container {
+         max-width: 800px;
+         padding: 60px;
+         margin: 0 auto;
+      }
+
+      h1 {
+         background-color: #ddd;
+         padding: 15px;
+         margin-bottom: 30px;
+      }
+
+      .post:not(:last-child) {
+         border-bottom: 1px solid #ccc;
+         padding-bottom: 15px;
+         margin-bottom: 30px;
+      }
+
+      #loadmore {
+         cursor: pointer;
+         margin-top: 20px;
+         display: none;
+         background-color: rgb(0, 115, 255);
+         color: #fff;
+         padding: 15px 40px;
+         border: none;
+         outline: none;
+         font-size: 16px;
+      }
+
+      #loadmore {
+         margin-top: 20px;
+         display: none;
+         font-size: 16px;
+      }
+
+      .loader {
+         padding: 100px 150px;
+      }
+   </style>
+   <script src="jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+   <div class="container">
+      <h1>Fetch Data from Another Site with $.getJSON</h1>
+
+      <div id="content">
+         <div class="loader"><img src="09.ajax-load-content/loader.svg" width="100"></div>
+      </div>
+      <button id="loadmore">Load More</button>
+      <!-- <p id="loadmore">Load More...</p> -->
+   </div>
+
+   <script>
+      (function ($) {
+
+         function displayItems(data) {
+            let items = "<div class='post-list'>";
+            $.each(data, (i, item) => {
+               items += `
+                  <div class="post">
+                     ${item._embedded && item._embedded['wp:featuredmedia'] ? `
+                        <div class="post-thumbnail">
+                           <img src='${item._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url}' alt='${item.title.rendered}'>
+                        </div>
+                        ` : ``
+                  }
+                     <h2 class="entry-title">${item.title.rendered}</h2>
+                     <div class="entry-summery">${item.excerpt.rendered.replace('[&hellip;]', '')}</div>
+                  </div>
+                  `;
+            });
+            items += '</div>';
+
+            $('#content').html(items);
+         }
+
+         $.getJSON(
+            "https://learn.wordpress.org/wp-json/wp/v2/wporg_workshop?per_page=20&_embed",
+            function (data, status, xhr) {
+               let perPage = 5;
+               let newItems = data.slice(0, perPage);
+               displayItems(newItems);
+
+               let loadMoreBtn = $('#loadmore');
+               if (data.length > perPage) {
+                  $(loadMoreBtn).show().attr('data-page', 1);
+
+                  $(loadMoreBtn).click(function () {
+                     let currentPage = parseInt($(this).attr('data-page'));
+
+                     currentPage++;
+                     $(this).attr('data-page', currentPage);
+
+                     newItems = data.slice(0, perPage * currentPage);
+                     displayItems(newItems);
+
+                     // Remove Load More if total items and new items are equal
+                     if (data.length === newItems.length) {
+                        $(loadMoreBtn).remove();
+                     }
+                  });
+
+                  // Load Data on Scroll
+                  /* $(window).scroll(function () {
+                     let scrollPosition = Math.round($(window).scrollTop());
+                     let bottom = $(document).height() - $(window).height();
+
+                     if (scrollPosition > bottom-10) {
+                        let currentPage = parseInt($(loadMoreBtn).attr('data-page'));
+
+                        currentPage++;
+                        $(loadMoreBtn).attr('data-page', currentPage);
+
+                        newItems = data.slice(0, perPage * currentPage);
+                        displayItems(newItems);
+
+                        // Remove Load More if total items and new items are equal
+                        if (data.length === newItems.length) {
+                           $(loadMoreBtn).remove();
+                        }
+                     }
+                  }); */
+
+               } else {
+                  $(loadMoreBtn).remove();
+               }
+
+            }
+         );
+
+      })(jQuery)
+   </script>
+</body>
+
+</html>

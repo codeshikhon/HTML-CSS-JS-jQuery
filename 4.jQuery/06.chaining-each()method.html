@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>jQuery Chaining and Work with each() Method</title>
+
+   <style>
+      h3 {
+         margin: 10px 0;
+      }
+
+      .progressbar {
+         margin-bottom: 30px;
+      }
+
+      .percent-count {
+         float: right;
+         margin-top: -42px;
+      }
+   </style>
+   <script src="jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+   <h1>jQuery Chaining and Work with each() Method</h1>
+
+   <h3>HTML</h3>
+   <div class="progressbar" data-width="80%" data-color="black"></div>
+
+   <h3>CSS</h3>
+   <div class="progressbar" data-width="68%" data-color="red"></div>
+
+   <h3>JavaScript</h3>
+   <div class="progressbar" data-width="85%" data-color="green"></div>
+
+   <h3>PHP</h3>
+   <div class="progressbar" data-width="75%" data-color="magenta"></div>
+
+
+   <script>
+      (function ($) {
+
+         // jQuery - Chaining
+         // $('.progressbar').css('background-color', 'red').html('<div class="progress"></div>').children('.progress').css({
+         //    'background-color': 'black',
+         //    'height': '10px',
+         //    'width': '80%',
+         // });
+
+         // jQuery each() Method
+         $('.progressbar').each(function () {
+            // console.log( i );
+            // console.log( element );
+
+            let width = $(this).attr('data-width');
+            let color = $(this).attr('data-color');
+
+            $(this).css('background-color', '#ccc').html(`<div class="progress"></div><div class="percent-count">${width}</div>`).children('.progress').css({
+               'background-color': color,
+               'height': '10px',
+               'width': width,
+            });
+         });
+
+      })(jQuery)
+   </script>
+</body>
+
+</html>

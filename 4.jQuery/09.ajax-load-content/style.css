@@ -1,0 +1,120 @@
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background-color: #fff;
+   margin: 0;
+}
+
+img {
+   max-width: 100%;
+}
+
+header {
+   border-bottom: 1px solid #ddd;
+}
+
+.container {
+   max-width: 1000px;
+   margin: 0 auto;
+   padding: 60px;
+   display: flex;
+}
+
+#content {
+   border-right: 1px solid #ddd;
+   width: 65%;
+   padding-right: 30px;
+}
+
+#sidebar {
+   width: 35%;
+   padding: 0 30px;
+}
+
+#content {
+   position: relative;
+}
+
+#content.loading {
+   opacity: 0.25;
+}
+
+nav ul {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   display: flex;
+   justify-content: center;
+}
+
+nav ul li a {
+   text-decoration: none;
+   color: #333;
+   display: block;
+   padding: 30px 20px;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+   width: 100%;
+   margin-bottom: 10px;
+   padding: 8px 10px;
+   border-radius: 3px;
+   border: 1px solid #ddd;
+}
+
+textarea {
+   resize: vertical;
+}
+
+input[type=submit] {
+   background-color: #037de4;
+   color: white;
+   padding: 10px 15px;
+   border: none;
+}
+
+.sidebar-widgets .widget:first-child h3 {
+   margin-top: 0
+}
+
+.sidebar-widgets a {
+   color: #333;
+   text-decoration: none;
+}
+
+.sidebar-widgets a:hover {
+   color: #1abc9c;
+}
+
+.popular-post h4,
+.recent-post h4 {
+   font-size: 14px;
+   margin: 7px 0;
+}
+
+.tagcloud a {
+   display: inline-block;
+   margin-right: 4px;
+   margin-bottom: 4px;
+   padding: 3px 6px;
+   border: 1px solid #e5e5e5;
+   font-size: 13px !important;
+   color: #666;
+   border-radius: 2px;
+   text-decoration: none;
+}
+
+footer {
+   border-top: 1px solid #ddd;
+}
+
+.copyright-text {
+   padding: 20px 60px;
+   margin: 0;
+   text-align: center;
+   font-size: 13px;
+}

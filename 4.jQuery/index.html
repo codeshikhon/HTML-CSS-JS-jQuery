@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>How to Create FAQ Accordion with jQuery</title>
+
+   <style>
+      .container {
+         max-width: 800px;
+         padding: 60px;
+         margin: 0 auto;
+      }
+
+      .post:not(:last-child) {
+         border-bottom: 1px solid #ccc;
+         padding-bottom: 15px;
+         margin-bottom: 30px;
+      }
+
+      #loader {
+         padding: 60px 160px;
+      }
+
+      .loadmore {
+         cursor: pointer;
+         margin-top: 20px;
+         display: none;
+         background-color: rgb(0, 115, 255);
+         color: #fff;
+         padding: 15px 40px;
+         border: none;
+         outline: none;
+         font-size: 16px;
+      }
+
+      h1 {
+         background-color: #ddd;
+         padding: 15px;
+         margin-bottom: 30px;
+      }
+   </style>
+   <script src="jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+   <div class="container">
+      <h1>Fetch Data from another Website</h1>
+
+      <div id="content">
+         <div id="loader"><img src="09.ajax-load-content/loader.svg" width="100" alt=""></div>
+      </div>
+      <button class="loadmore">Load More</button>
+   </div>
+
+   <script>
+      (function ($) {
+
+         // $('#content').load('02.get-started.html h1', function(responseTxt, statusTxt, xhr) {
+
+         //    if( statusTxt === "success" ) {
+         //       console.log( statusTxt )
+         //    }
+
+         //    if( statusTxt === "error" ) {
+         //       $(this).html( xhr.status + " " + xhr.statusText );
+         //    }
+         // });
+
+         function displayItems(data) {
+            let items = '<div class="post-list">';
+            $.each(data, (i, item) => {
+               items += `
+                     <div class="post">
+                        <h2 class="entry-title">${item.title.rendered}</h2>
+                        ${(item._embedded && item._embedded['wp:featuredmedia']) ? `<div class="post-thumbnail"><img src='${item._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url}'></div>` : ``
+                  }
+                        <div class="entry-summery">${item.excerpt.rendered.replace('[&hellip;]', '')}</div>
+                     </div>
+                  `;
+            });
+            items += '</div>';
+
+            $('#content').html(items);
+         }
+
+         $.getJSON(
+            "https://learn.wordpress.org/wp-json/wp/v2/wporg_workshop?per_page=25&_embed",
+            function (data, status, xhr) {
+               let perPage = 5;
+               let totalPages = data.length / perPage;
+               let newItems = data.slice(0, perPage);
+               displayItems(newItems);
+
+               let loadMoreButton = $('.loadmore');
+               if (data.length > perPage) {
+                  $(loadMoreButton).show().attr('data-page', 1);
+                  $(loadMoreButton).click(function () {
+                     currentPage = parseInt($(this).attr('data-page'));
+                     if (totalPages - 1 === currentPage) {
+                        $(this).remove();
+                     };
+
+                     currentPage++;
+                     $(this).attr('data-page', currentPage);
+                     newItems = data.slice(0, perPage * currentPage);
+                     displayItems(newItems);
+                  });
+
+                  // Load Data on Scroll
+                  $(window).scroll(function () {
+                     let scrollPos = Math.round($(window).scrollTop());
+                     let bottom = $(document).height() - $(window).height();
+
+                     if (scrollPos > bottom - 20) {
+                        currentPage = parseInt($(loadMoreButton).attr('data-page'));
+                        if (totalPages - 1 === currentPage) {
+                           $(loadMoreButton).remove();
+                        };
+
+                        currentPage++;
+                        $(loadMoreButton).attr('data-page', currentPage);
+                        newItems = data.slice(0, perPage * currentPage);
+                        displayItems(newItems);
+                     }
+                  })
+
+               } else {
+                  $(loadMoreButton).remove();
+               }
+            }
+         );
+
+      })(jQuery)
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>How to Create FAQ Accordion with jQuery</title>
+
+   <style>
+      body {
+         background-color: #f4f4f4;
+      }
+
+      .container {
+         max-width: 800px;
+         padding: 60px;
+         margin: 0 auto;
+      }
+
+      .accordion {
+         background-color: #fff;
+         padding: 30px;
+      }
+
+      .accordion .accordion-item {
+         border-bottom: 1px solid #dee2e6;
+      }
+
+      .accordion .accordion-item:last-child {
+         border-bottom: none;
+      }
+
+      .accordion .accordion-header h3 {
+         cursor: pointer;
+         margin: 0;
+         padding: 18px 0;
+      }
+
+      .accordion .accordion-header h3::after {
+         content: "";
+         border: solid black;
+         border-width: 0 1px 1px 0;
+         padding: 5px;
+         -webkit-transform: rotate(45deg);
+         transform: rotate(45deg);
+         float: right;
+         transition: transform 0.3s;
+      }
+
+      .accordion .active .accordion-header h3::after {
+         -webkit-transform: rotate(-135deg);
+         transform: rotate(-135deg);
+      }
+
+      .accordion .accordion-body {
+         padding: 15px 0;
+         border-top: 1px solid #dee2e6;
+      }
+
+      .accordion :not(.active) .accordion-body {
+         display: none;
+      }
+   </style>
+   <script src="jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+   <div class="container">
+      <h1>Creating FAQ Accordion with jQuery</h1>
+
+      <div class="accordion">
+         <div class="accordion-item active">
+            <div class="accordion-header">
+               <h3>What does LOREM mean?</h3>
+            </div>
+            <div class="accordion-body">
+               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos quaerat error voluptatibus quo optio soluta eligendi pariatur, reprehenderit libero veniam est molestiae? Voluptas animi, reiciendis velit veritatis quam commodi similique, debitis harum mollitia, perferendis beatae eum totam molestias at excepturi adipisci illo dolores iure. Quaerat dolor dignissimos reprehenderit magnam alias.</p>
+            </div>
+         </div>
+
+         <div class="accordion-item">
+            <div class="accordion-header">
+               <h3>Where can I subscribe to your newsletter?</h3>
+            </div>
+            <div class="accordion-body">
+               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima qui maxime odit tempora nisi quisquam quae aut aliquid. Ipsam tempore suscipit maxime quas consequuntur soluta vel inventore nobis eveniet facilis culpa ipsa, modi excepturi perferendis! Quae unde vitae nobis impedit.</p>
+            </div>
+         </div>
+
+         <div class="accordion-item">
+            <div class="accordion-header">
+               <h3>Where can in edit my address?</h3>
+            </div>
+            <div class="accordion-body">
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores facere aliquam earum minima ea quia totam corporis itaque culpa inventore, blanditiis placeat est deleniti obcaecati animi architecto, vero unde ullam veniam officia. At nulla cumque quae qui iure ea eveniet veritatis, aperiam fugit doloremque culpa suscipit quidem voluptatem harum modi.</p>
+            </div>
+         </div>
+
+      </div>
+   </div>
+
+   <script>
+      (function ($) {
+
+         $('.accordion-header').click(function() {
+            // $(this).next('.accordion-body').slideToggle().parent().toggleClass('active');
+            // console.log( );
+
+            // $(this).next('.accordion-body').slideToggle().parent().toggleClass('active').siblings().removeClass('active').children('.accordion-body').slideUp();
+
+            $(this).next('.accordion-body').slideToggle(function() {
+               $(this).parent().toggleClass('active').siblings().removeClass('active');
+            }).parent().siblings().children('.accordion-body').slideUp();
+         })
+
+      })(jQuery)
+   </script>
+</body>
+
+</html>
